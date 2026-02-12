@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,22 +8,43 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #050505; color: #ffffff; font-family: 'Inter', sans-serif; scroll-behavior: smooth; overflow-x: hidden; }
-        
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
         .bg-grid {
             background-image: linear-gradient(to right, rgba(59, 130, 246, 0.05) 1px, transparent 1px),
-                              linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+                linear-gradient(to bottom, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
             background-size: 50px 50px;
         }
 
-        #cursor-glow { 
-            position: fixed; top: 0; left: 0; width: 600px; height: 600px; 
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%); 
-            border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); z-index: 1;
+        #cursor-glow {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            transform: translate(-50%, -50%);
+            z-index: 1;
         }
 
-        .reveal { opacity: 0; transform: translateY(50px) scale(0.9); transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0) scale(1); }
+        .reveal {
+            opacity: 0;
+            transform: translateY(50px) scale(0.9);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
 
         /* ФИКС БУКВЫ Р */
         .hero-name {
@@ -32,32 +54,58 @@
             -webkit-text-fill-color: transparent;
             animation: shine 3s linear infinite;
             display: inline-block;
-            padding-right: 0.25em; 
+            padding-right: 0.25em;
             margin-right: -0.25em;
         }
-        @keyframes shine { to { background-position: 200% center; } }
 
-        .glass { 
-            background: rgba(255, 255, 255, 0.02); 
-            border: 1px solid rgba(255, 255, 255, 0.08); 
-            backdrop-filter: blur(15px); 
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(15px);
             border-radius: 2.5rem;
         }
-        
-        .tilt-card { transition: transform 0.1s ease-out; }
-        .magnetic-btn { display: inline-block; transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1); }
-        .progress-fill { width: 0%; transition: width 2s ease-out; }
 
-        .project-card { overflow: hidden; position: relative; }
-        .project-card img { transition: transform 0.5s ease; }
-        .project-card:hover img { transform: scale(1.1); }
+        .tilt-card {
+            transition: transform 0.1s ease-out;
+        }
+
+        .magnetic-btn {
+            display: inline-block;
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .progress-fill {
+            width: 0%;
+            transition: width 2s ease-out;
+        }
+
+        .project-card {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .project-card img {
+            transition: transform 0.5s ease;
+        }
+
+        .project-card:hover img {
+            transform: scale(1.1);
+        }
     </style>
 </head>
+
 <body class="bg-black">
     <div id="cursor-glow"></div>
 
     <nav class="fixed w-full z-50 bg-black/40 backdrop-blur-xl border-b border-white/5 px-8 py-5">
-        <div class="max-w-7xl mx-auto flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
+        <div
+            class="max-w-7xl mx-auto flex justify-between items-center text-[10px] font-black uppercase tracking-widest">
             <div class="text-2xl italic tracking-tighter">DRIM<span class="text-blue-500">DEV</span></div>
             <div class="flex gap-6">
                 <a href="#home" class="hover:text-blue-500 transition">Главная</a>
@@ -73,15 +121,20 @@
                 <h1 class="text-7xl md:text-9xl font-black leading-none mb-8 italic uppercase tracking-tighter">
                     Я <span class="hero-name">САМИР</span>
                 </h1>
-                <p id="typewriter" class="text-gray-400 text-2xl font-medium mb-10 italic h-10">Junior Developer from Andijan</p>
+                <p id="typewriter" class="text-gray-400 text-2xl font-medium mb-10 italic h-10">Junior Developer from
+                    Andijan</p>
                 <div class="flex gap-4">
-                    <a href="https://github.com/drimstendoff-oss" target="_blank" class="magnetic-btn bg-blue-600 px-10 py-5 rounded-2xl font-black uppercase text-xs tracking-widest">GitHub</a>
-                    <button onclick="copyTG()" class="magnetic-btn border border-white/10 px-10 py-5 rounded-2xl font-black uppercase text-xs tracking-widest hover:bg-white/5">Telegram</button>
+                    <a href="https://github.com/drimstendoff-oss" target="_blank"
+                        class="magnetic-btn bg-blue-600 px-10 py-5 rounded-2xl font-black uppercase text-xs tracking-widest">GitHub</a>
+                    <button onclick="copyTG()"
+                        class="magnetic-btn border border-white/10 px-10 py-5 rounded-2xl font-black uppercase text-xs tracking-widest hover:bg-white/5">Telegram</button>
                 </div>
             </div>
             <div class="flex justify-center reveal">
                 <div class="tilt-card">
-                    <img src="img/imeg.png" class="w-full max-w-sm aspect-square object-cover rounded-[3.5rem] border-2 border-white/10 shadow-2xl" onerror="this.src='https://via.placeholder.com/1000'">
+                    <img src="img/imeg.png"
+                        class="w-full max-w-sm aspect-square object-cover rounded-[3.5rem] border-2 border-white/10 shadow-2xl"
+                        onerror="this.src='https://via.placeholder.com/1000'">
                 </div>
             </div>
         </div>
@@ -92,7 +145,8 @@
             <h2 class="text-4xl font-black uppercase italic mb-16 border-l-8 border-blue-600 pl-6">Проекты</h2>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass project-card group p-4">
-                    <img src="https://via.placeholder.com/600x400/111/3b82f6?text=Portfolio+V1" class="rounded-[2rem] mb-6 w-full">
+                    <img src="./img/projekt.png"
+                        class="rounded-[2rem] mb-6 w-full">
                     <div class="p-4">
                         <h3 class="text-2xl font-black uppercase italic mb-2">Portfolio V1</h3>
                         <p class="text-gray-500 text-sm mb-4">Моя первая работа на HTML/CSS. Начало пути.</p>
@@ -102,9 +156,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="glass project-card group p-4">
-                    <img src="https://via.placeholder.com/600x400/111/a855f7?text=Coming+Soon" class="rounded-[2rem] mb-6 w-full opacity-50">
-                    <div class="p-4">
                         <h3 class="text-2xl font-black uppercase italic mb-2 text-gray-600">Next Big Thing</h3>
                         <p class="text-gray-700 text-sm mb-4">В процессе разработки. Это будет пушка.</p>
                         <div class="flex gap-2 text-[10px] font-bold uppercase opacity-30">
@@ -120,12 +171,26 @@
     <section id="about" class="py-24 px-8 reveal">
         <div class="max-w-6xl mx-auto glass p-10 md:p-20 tilt-card">
             <h2 class="text-4xl font-black uppercase italic mb-10 text-blue-500">Кто я</h2>
-            <p class="text-gray-400 text-xl leading-relaxed mb-8">Мне 14 лет, живу в Андижане. Я верю в то, что код — это искусство. Каждый день я трачу время на изучение новых фишек в вебе, чтобы делать сайты, которые цепляют глаз.</p>
+            <p class="text-gray-400 text-xl leading-relaxed mb-8">Мне 14 лет, живу в Андижане. Я верю в то, что код —
+                это искусство. Каждый день я трачу время на изучение новых фишек в вебе, чтобы делать сайты, которые
+                цепляют глаз.</p>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8 pt-10 border-t border-white/5">
-                <div><div class="text-3xl font-black">14</div><div class="text-[10px] text-gray-600 uppercase">Лет</div></div>
-                <div><div class="text-3xl font-black">Andijan</div><div class="text-[10px] text-gray-600 uppercase">Город</div></div>
-                <div><div class="text-3xl font-black">Step</div><div class="text-[10px] text-gray-600 uppercase">By Step</div></div>
-                <div><div class="text-3xl font-black">En</div><div class="text-[10px] text-gray-600 uppercase">Elementary</div></div>
+                <div>
+                    <div class="text-3xl font-black">14</div>
+                    <div class="text-[10px] text-gray-600 uppercase">Лет</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black">Andijan</div>
+                    <div class="text-[10px] text-gray-600 uppercase">Город</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black">Step</div>
+                    <div class="text-[10px] text-gray-600 uppercase">By Step</div>
+                </div>
+                <div>
+                    <div class="text-3xl font-black">En</div>
+                    <div class="text-[10px] text-gray-600 uppercase">Elementary</div>
+                </div>
             </div>
         </div>
     </section>
@@ -135,15 +200,24 @@
             <h2 class="text-center text-4xl font-black uppercase italic mb-16">Мой Роадмап</h2>
             <div class="glass p-8 flex items-center gap-6 border-l-4 border-blue-500">
                 <span class="text-2xl font-black opacity-20">01</span>
-                <div><h4 class="font-black uppercase">HTML / CSS</h4><p class="text-gray-500 text-sm">Освоено на базовом уровне. Изучаю Tailwind.</p></div>
+                <div>
+                    <h4 class="font-black uppercase">HTML / CSS</h4>
+                    <p class="text-gray-500 text-sm">Освоено на базовом уровне. Изучаю Tailwind.</p>
+                </div>
             </div>
             <div class="glass p-8 flex items-center gap-6 border-l-4 border-purple-500">
                 <span class="text-2xl font-black opacity-20">02</span>
-                <div><h4 class="font-black uppercase">JavaScript</h4><p class="text-gray-500 text-sm">В процессе. Учусь оживлять интерфейсы.</p></div>
+                <div>
+                    <h4 class="font-black uppercase">JavaScript</h4>
+                    <p class="text-gray-500 text-sm">В процессе. Учусь оживлять интерфейсы.</p>
+                </div>
             </div>
             <div class="glass p-8 flex items-center gap-6 border-l-4 border-white/20">
                 <span class="text-2xl font-black opacity-20">03</span>
-                <div><h4 class="font-black uppercase text-gray-600">React / Vue</h4><p class="text-gray-700 text-sm">Цель на 2026 год.</p></div>
+                <div>
+                    <h4 class="font-black uppercase text-gray-600">React / Vue</h4>
+                    <p class="text-gray-700 text-sm">Цель на 2026 год.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -152,13 +226,17 @@
         <div class="max-w-5xl mx-auto glass p-12 md:p-20 text-center relative overflow-hidden group">
             <h2 class="text-6xl font-black uppercase italic mb-12">Let's <span class="text-blue-500">Work</span></h2>
             <div class="flex flex-wrap justify-center gap-6">
-                <a href="https://t.me/nulls3nse" target="_blank" class="magnetic-btn bg-white text-black px-12 py-6 rounded-2xl font-black uppercase tracking-widest hover:invert transition">Telegram</a>
-                <button onclick="copyTG()" class="magnetic-btn border border-white/20 px-12 py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-white/5 transition">Copy ID</button>
+                <a href="https://t.me/nulls3nse" target="_blank"
+                    class="magnetic-btn bg-white text-black px-12 py-6 rounded-2xl font-black uppercase tracking-widest hover:invert transition">Telegram</a>
+                <button onclick="copyTG()"
+                    class="magnetic-btn border border-white/20 px-12 py-6 rounded-2xl font-black uppercase tracking-widest hover:bg-white/5 transition">Copy
+                    ID</button>
             </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-800 text-[10px] font-black uppercase tracking-[1em]">DRIMDEV 2026</footer>
+    <footer class="py-10 text-center text-gray-800 text-[10px] font-black uppercase tracking-[1em]">DRIMDEV 2026
+    </footer>
 
     <script>
         const glow = document.getElementById('cursor-glow');
@@ -170,8 +248,8 @@
         document.querySelectorAll('.tilt-card').forEach(card => {
             card.addEventListener('mousemove', (e) => {
                 const rect = card.getBoundingClientRect();
-                const x = (e.clientX - rect.left - rect.width/2) / 15;
-                const y = (e.clientY - rect.top - rect.height/2) / 15;
+                const x = (e.clientX - rect.left - rect.width / 2) / 15;
+                const y = (e.clientY - rect.top - rect.height / 2) / 15;
                 card.style.transform = `rotateY(${x}deg) rotateX(${-y}deg) scale(1.02)`;
             });
             card.addEventListener('mouseleave', () => card.style.transform = `rotateY(0deg) rotateX(0deg) scale(1)`);
@@ -180,8 +258,8 @@
         document.querySelectorAll('.magnetic-btn').forEach(btn => {
             btn.addEventListener('mousemove', (e) => {
                 const rect = btn.getBoundingClientRect();
-                const x = (e.clientX - rect.left - rect.width/2) * 0.4;
-                const y = (e.clientY - rect.top - rect.height/2) * 0.4;
+                const x = (e.clientX - rect.left - rect.width / 2) * 0.4;
+                const y = (e.clientY - rect.top - rect.height / 2) * 0.4;
                 btn.style.transform = `translate(${x}px, ${y}px)`;
             });
             btn.addEventListener('mouseleave', () => btn.style.transform = `translate(0, 0)`);
@@ -210,4 +288,5 @@
         }
     </script>
 </body>
+
 </html>
